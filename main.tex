@@ -22,6 +22,7 @@
 \usepackage{minted}
 \usepackage[thicklines]{cancel}
 \usepackage{fancyvrb}
+\usepackage{ulem}
 
 \xdefinecolor{dianablue}{rgb}{0.18,0.24,0.31}
 \xdefinecolor{darkblue}{rgb}{0.1,0.1,0.7}
@@ -322,7 +323,9 @@ new:
 \vspace{0.15 cm}
 \end{minipage} \\\hline
 
-\begin{minipage}{\linewidth}\bf PyPI \& Conda\end{minipage} & \begin{minipage}{\linewidth}
+\begin{minipage}{\linewidth}\bf pip \&
+
+conda\end{minipage} & \begin{minipage}{\linewidth}
 \vspace{0.15 cm}
 old: {\small \mintinline{bash}{install awkward uproot}}
 
@@ -361,6 +364,42 @@ new:
 \end{columns}
 \end{frame}
 
+\begin{frame}{When is ``soon''? What needs to be done before the name change?}
+\large
+\vspace{0.5 cm}
 
+\begin{description}\setlength{\itemsep}{0.5 cm}
+\item[\Large Awkward Array:] \mbox{ } \\
+
+\vspace{0.3 cm}
+\begin{itemize}\setlength{\itemsep}{0.2 cm}
+\item Support Python 3.9.
+
+\item Move \mintinline{python}{libawkward.so} into its own package.
+
+\item Awkward 0.x $\to$ Awkward 1.x cheat sheet.
+\end{itemize}
+
+\item[\Large Uproot:] \mbox{ } \\
+
+\vspace{0.2 cm}
+\begin{itemize}\setlength{\itemsep}{0.2 cm}
+\item \sout{Implement file-writing in Uproot 4.}
+
+For now, you'll have to use Uproot 3 {\it for writing only}.
+
+\item Uproot 3.x $\to$ Uproot 4.x cheat sheet.
+\end{itemize}
+\end{description}
+
+\vspace{0.65 cm}
+{\Large My deadline: \textcolor{darkblue}{December 1, 2020}.}
+\end{frame}
+
+\begin{frame}{Beyond that\ldots}
+
+
+
+\end{frame}
 
 \end{document}
