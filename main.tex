@@ -268,12 +268,12 @@
 \includegraphics[width=\linewidth]{05-github-anyroot-python-machinelearning-uproot.pdf}
 \end{frame}
 
-\begin{frame}{Both libraries rewritten: new interface, better architecture}
+\begin{frame}{Both libraries rewritten in 2020: new interface, better architecture}
 \vspace{0.5 cm}
 \includegraphics[width=\linewidth]{uproot-awkward-timeline.pdf}
 \end{frame}
 
-\begin{frame}{Opt-in adoption of the new libraries}
+\begin{frame}{Adoption of the new libraries}
 \large
 \vspace{0.35 cm}
 
@@ -399,14 +399,17 @@ For now, you'll have to use Uproot 3 {\it for writing only}.
 \begin{frame}{Beyond that\ldots}
 \large
 \vspace{0.5 cm}
+\begin{columns}
+\column{0.85\linewidth}
 {\Large Major directions:}
 
 \vspace{0.25 cm}
 \begin{itemize}\setlength{\itemsep}{0.25 cm}
-\item \textcolor{darkblue}{Python ecosystem integration} (Dask, Zarr, Xarray?)
-\item \textcolor{darkblue}{autodiff} (JAX, elementwise, reducers)
-\item \textcolor{darkblue}{GPU support} (direct \& through Numba)
+\item \textcolor{darkblue}{Python ecosystem integration}: Dask, Zarr, Xarray?
+\item \textcolor{darkblue}{Auto-differentiation}: JAX, elementwise, reducers
+\item \textcolor{darkblue}{GPU support}: direct and through Numba (\mintinline{python}{@nb.cuda.jit})
 \end{itemize}
+\end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Working demo of Awkward Array on a GPU}
@@ -414,7 +417,7 @@ For now, you'll have to use Uproot 3 {\it for writing only}.
 \vspace{0.5 cm}
 \begin{columns}
 \column{1.08\linewidth}
-This is {\it the visible part} of Pratyush Das \& Anish Biswas's hard work this summer!
+This is \underline{\it the visible part} of Pratyush Das \& Anish Biswas's hard work this summer!
 
 \small
 \begin{minted}{python}
@@ -434,7 +437,7 @@ This is {\it the visible part} of Pratyush Das \& Anish Biswas's hard work this 
 \end{uncoverenv}
 \begin{uncoverenv}<3->
 \begin{minted}{python}
->>> ak.num(on_gpu)                   # some operations work on GPU
+>>> ak.num(on_gpu)                   # some operations work on the GPU
 <Array:cuda [3, 0, 2] type='3 * int64'>
 \end{minted}
 \end{uncoverenv}
@@ -446,7 +449,7 @@ This is {\it the visible part} of Pratyush Das \& Anish Biswas's hard work this 
 \end{uncoverenv}
 \begin{uncoverenv}<5->
 \begin{minted}{python}
->>> cp.asarray(ak.flatten(on_gpu))   # stays on GPU as a CuPy array
+>>> cp.asarray(ak.flatten(on_gpu))   # stays on the GPU as a CuPy array
 array([1.1, 2.2, 3.3, 4.4, 5.5])
 \end{minted}
 \end{uncoverenv}
