@@ -397,9 +397,60 @@ For now, you'll have to use Uproot 3 {\it for writing only}.
 \end{frame}
 
 \begin{frame}{Beyond that\ldots}
+\large
+\vspace{0.5 cm}
+{\Large Major directions:}
 
+\vspace{0.25 cm}
+\begin{itemize}\setlength{\itemsep}{0.25 cm}
+\item \textcolor{darkblue}{Python ecosystem integration} (Dask, Zarr, Xarray?)
+\item \textcolor{darkblue}{autodiff} (JAX, elementwise, reducers)
+\item \textcolor{darkblue}{GPU support} (direct \& through Numba)
+\end{itemize}
+\end{frame}
 
+\begin{frame}[fragile]{Working demo of Awkward Array on a GPU}
+\large
+\vspace{0.5 cm}
+\begin{columns}
+\column{1.08\linewidth}
+This is {\it the visible part} of Pratyush Das \& Anish Biswas's hard work this summer!
 
+\small
+\begin{minted}{python}
+>>> import awkward1 as ak, numpy as np, cupy as cp
+\end{minted}
+\begin{minted}{python}
+>>> on_cpu = ak.Array([[1.1, 2.2, 3.3], [], [4.4, 5.5]])
+>>> on_cpu                           # this jagged array is on the CPU
+<Array [[1.1, 2.2, 3.3], [], [4.4, 5.5]] type='3 * var * float64'>
+\end{minted}
+\begin{uncoverenv}<2->
+\begin{minted}{python}
+>>> on_gpu = ak.to_kernels(on_cpu, "cuda")
+>>> on_gpu                           # this jagged array is on the GPU
+<Array:cuda [[1.1, 2.2, 3.3], ... [4.4, 5.5]] type='3 * var * float64'>
+\end{minted}
+\end{uncoverenv}
+\begin{uncoverenv}<3->
+\begin{minted}{python}
+>>> ak.num(on_gpu)                   # some operations work on GPU
+<Array:cuda [3, 0, 2] type='3 * int64'>
+\end{minted}
+\end{uncoverenv}
+\begin{uncoverenv}<4->
+\begin{minted}{python}
+>>> np.sqrt(on_gpu)                  # performs math on GPU (using CuPy)
+<Array:cuda [[1.05, 1.48, 1.82, ... 2.1, 2.35]] type='3 * var * float64'>
+\end{minted}
+\end{uncoverenv}
+\begin{uncoverenv}<5->
+\begin{minted}{python}
+>>> cp.asarray(ak.flatten(on_gpu))   # stays on GPU as a CuPy array
+array([1.1, 2.2, 3.3, 4.4, 5.5])
+\end{minted}
+\end{uncoverenv}
+\end{columns}
 \end{frame}
 
 \end{document}
