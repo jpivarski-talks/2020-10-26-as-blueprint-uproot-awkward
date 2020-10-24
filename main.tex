@@ -276,7 +276,7 @@
 \large
 \vspace{0.35 cm}
 
-Plateaued at a small fraction of pip-installs, but significant cross-over for ``\mintinline{python}{import awkward}'' vs.\ ``\mintinline{python}{import awkward1}'' in GitHub searches.
+Plateaued at a small fraction of pip-installs, but significant cross-over for ``\mintinline{python}{import awkward}'' vs.\ ``\mintinline{python}{import awkward1}'' in Python files in GitHub.
 
 \vspace{0.25 cm}
 \begin{columns}
@@ -285,7 +285,81 @@ Plateaued at a small fraction of pip-installs, but significant cross-over for ``
 \end{columns}
 \end{frame}
 
+\begin{frame}{``Opt-in for new'' $\longrightarrow$ ``opt-in for old''}
+\vspace{0.35 cm}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{Raiders-of-the-Lost-Ark-Chamber.jpg}
+\end{center}
+\end{frame}
 
+\begin{frame}{``Opt-in for new'' $\longrightarrow$ ``opt-in for old''}
+\large
+\vspace{0.5 cm}
+\begin{columns}
+\column{1.07\linewidth}
+\begin{tabular}{p{0.1\linewidth} | p{0.42\linewidth} | p{0.42\linewidth}}
+& {\bf now} & {\bf soon} \\\hline
+
+{\bf GitHub} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old:
+
+{\small\tt scikit-hep/awkward-array} {\small\tt scikit-hep/uproot}
+
+new:
+
+{\small\tt scikit-hep/awkward-1.0} {\small\tt scikit-hep/uproot4}
+\vspace{0.15 cm}
+\end{minipage} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old:
+
+{\small\tt scikit-hep/awkward-0.x} {\small\tt scikit-hep/uproot-3.x}
+
+new:
+
+{\small\tt scikit-hep/awkward-array} {\small\tt scikit-hep/uproot}
+\vspace{0.15 cm}
+\end{minipage} \\\hline
+
+\begin{minipage}{\linewidth}\bf PyPI \& Conda\end{minipage} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old: {\small \mintinline{bash}{install awkward uproot}}
+
+new: {\small \mintinline{bash}{install awkward1 uproot4}}
+\vspace{0.15 cm}
+\end{minipage} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old: {\small \mintinline{bash}{install awkward0 uproot3}}
+
+new: {\small \mintinline{bash}{install awkward uproot}}
+\vspace{0.15 cm}
+\end{minipage} \\\hline
+
+{\bf Python} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old:
+
+{\small \mintinline{python}{import awkward, uproot}}
+
+new:
+
+{\small \mintinline{python}{import awkward1, uproot4}}
+\vspace{0.15 cm}
+\end{minipage} & \begin{minipage}{\linewidth}
+\vspace{0.15 cm}
+old:
+
+{\small \mintinline{python}{import awkward0, uproot3}}
+
+new:
+
+{\small \mintinline{python}{import awkward, uproot}}
+\vspace{0.15 cm}
+\end{minipage} \\\hline
+\end{tabular}
+\end{columns}
+\end{frame}
 
 
 
