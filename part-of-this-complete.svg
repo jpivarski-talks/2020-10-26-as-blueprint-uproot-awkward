@@ -258,9 +258,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="1281.7948"
-     inkscape:cy="357.70848"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="548.19929"
+     inkscape:cy="272.55548"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -280,7 +280,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -472,7 +472,7 @@
     </g>
     <g
        id="g3385"
-       transform="translate(-12.631239,-6.889349)">
+       transform="translate(-11.13453,-9.5085904)">
       <g
          id="g3396">
         <image
@@ -744,7 +744,7 @@
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.39999962px;font-family:'Hiragino Kaku Gothic StdN';-inkscape-font-specification:'Hiragino Kaku Gothic StdN';fill:#000000;fill-opacity:1;stroke-width:0.26458332px"
            d="m 121.17928,105.44321 c -0.0254,-0.254 -0.0254,-0.4064 -0.0254,-0.508 -0.0762,-1.4478 -0.1778,-2.5146 -0.381,-3.3274 -0.889,-3.784602 -3.6576,-5.943602 -7.62,-5.943602 -4.8514,0 -8.0772,3.3274 -8.0772,8.356602 0,2.5146 0.8128,4.6736 2.3114,6.1976 1.4478,1.4478 3.4036,2.159 5.8928,2.159 2.5146,0 4.5466,-0.7366 5.9944,-2.159 0.7112,-0.7112 1.0922,-1.2954 1.6764,-2.6162 l -4.4196,-1.2446 c -0.2032,0.6604 -0.381,0.9398 -0.762,1.2954 -0.6604,0.6096 -1.5494,0.9398 -2.5654,0.9398 -2.0066,0 -3.2004,-1.0922 -3.4544,-3.1496 z m -11.3538,-3.5052 c 0.4318,-1.6764 1.524,-2.489202 3.3274,-2.489202 1.7526,0 2.8448,0.863602 3.2004,2.489202 z" />
         <ellipse
-           style="opacity:1;fill:none;fill-opacity:0;stroke:#171717;stroke-width:1.00000012;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99667777"
+           style="opacity:1;fill:none;fill-opacity:0;stroke:#ff0000;stroke-width:1.00000012;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.99667777"
            id="use4555"
            cx="75.044685"
            cy="88.503937"
@@ -768,7 +768,8 @@
            id="use4571"
            xlink:href="#use4555"
            y="0"
-           x="0" />
+           x="0"
+           style="stroke:#ff0000" />
         <path
            transform="scale(-1,1)"
            d="m -18.602292,102.57107 c 0.193365,-0.13442 0.45179,-0.026 0.568226,0.15708 0.20191,0.3175 0.02412,0.72592 -0.27749,0.90426 -0.491725,0.29075 -1.106819,0.0151 -1.367614,-0.45361 -0.404727,-0.72733 0.004,-1.61803 0.69944,-1.98556 1.036583,-0.54784 2.285101,0.0363 2.787643,1.03033 0.724353,1.43269 -0.08551,3.13555 -1.462914,3.8056 -1.929808,0.93876 -4.19882,-0.15538 -5.073339,-2.0151 -0.125683,-0.26727 -0.224287,-0.54716 -0.294842,-0.83393"
@@ -1135,27 +1136,32 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.7709074px;line-height:1.10000002;font-family:'Nimbus Sans';-inkscape-font-specification:'Nimbus Sans';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18034086"
-       x="201.06264"
-       y="184.1499"
+       x="202.55934"
+       y="181.53065"
        id="text3426"><tspan
          sodipodi:role="line"
-         x="201.06264"
-         y="184.1499"
+         x="202.55934"
+         y="181.53065"
          style="stroke-width:0.18034086"
          id="tspan3428">NanoEvents,</tspan><tspan
          sodipodi:role="line"
-         x="201.06264"
-         y="190.49789"
+         x="202.55934"
+         y="187.87865"
          style="stroke-width:0.18034086"
          id="tspan3432">Lorentz vectors,</tspan><tspan
          sodipodi:role="line"
-         x="201.06264"
-         y="196.8459"
+         x="202.55934"
+         y="194.22665"
          style="stroke-width:0.18034086"
-         id="tspan3434">Correction functions,</tspan><tspan
+         id="tspan3434">Histogramming,</tspan><tspan
          sodipodi:role="line"
-         x="201.06264"
-         y="203.19389"
+         x="202.55934"
+         y="200.57465"
+         style="stroke-width:0.18034086"
+         id="tspan1056">Correction functions,</tspan><tspan
+         sodipodi:role="line"
+         x="202.55934"
+         y="206.92265"
          style="stroke-width:0.18034086"
          id="tspan3436">Distributed processing...</tspan></text>
     <text
