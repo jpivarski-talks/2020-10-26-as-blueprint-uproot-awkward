@@ -72,4 +72,194 @@
 \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Uproot is ROOT I/O rewritten in Python}
+\vspace{0.5 cm}
+\includegraphics[height=1.5 cm]{uproot-logo.pdf}
+
+\vspace{-1.75 cm}
+\includegraphics[width=\linewidth]{abstraction-layers.png}
+
+\small
+\vspace{-0.7 cm}
+\begin{uncoverenv}<2->
+\begin{minted}{python}
+>>> import uproot4
+>>> data = uproot4.open("file.root:Events").arrays()
+\end{minted}
+\end{uncoverenv}
+\end{frame}
+
+\begin{frame}[fragile]{Awkward Array is NumPy for JSON-like data}
+\vspace{0.2 cm}
+\hfill \mbox{\includegraphics[height=1.5 cm]{awkward-logo.pdf}\hspace{-0.85 cm}}
+
+\vspace{-1.5 cm}
+\scriptsize
+\begin{onlyenv}<1>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                   {"px": 2, "py": 2, "pz": 2, "E": 2},
+...                   {"px": 3, "py": 3, "pz": 3, "E": 3},
+...                   {"px": 4, "py": 4, "pz": 4, "E": 4},
+...                   {"px": 5, "py": 5, "pz": 5, "E": 5}],
+...                  with_name="Lorentz")
+... 
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\begin{onlyenv}<2>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                   {"px": 2, "py": 2, "pz": 2, "E": 2},
+...                   {"px": 3, "py": 3, "pz": 3, "E": 3},
+...                   {"px": 4, "py": 4, "pz": 4, "E": 4},
+...                   {"px": 5, "py": 5, "pz": 5, "E": 5}],
+...                  with_name="Lorentz")
+... 
+>>> array[-2]
+<LorentzRecord {px: 4, py: 4, pz: 4, E: 4} type='Lorentz["px": int64, "py": int6...'>
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\begin{onlyenv}<3>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                   {"px": 2, "py": 2, "pz": 2, "E": 2},
+...                   {"px": 3, "py": 3, "pz": 3, "E": 3},
+...                   {"px": 4, "py": 4, "pz": 4, "E": 4},
+...                   {"px": 5, "py": 5, "pz": 5, "E": 5}],
+...                  with_name="Lorentz")
+... 
+>>> array[-2]
+<LorentzRecord {px: 4, py: 4, pz: 4, E: 4} type='Lorentz["px": int64, "py": int6...'>
+>>> array * 10
+<Array [{px: 10, py: 10, pz: 10, ... E: 50}] type='5 * {"px": int64, "py": int64...'>
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\begin{onlyenv}<4>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                   {"px": 2, "py": 2, "pz": 2, "E": 2},
+...                   {"px": 3, "py": 3, "pz": 3, "E": 3},
+...                   {"px": 4, "py": 4, "pz": 4, "E": 4},
+...                   {"px": 5, "py": 5, "pz": 5, "E": 5}],
+...                  with_name="Lorentz")
+... 
+>>> array[-2]
+<LorentzRecord {px: 4, py: 4, pz: 4, E: 4} type='Lorentz["px": int64, "py": int6...'>
+>>> array * 10
+<Array [{px: 10, py: 10, pz: 10, ... E: 50}] type='5 * {"px": int64, "py": int64...'>
+>>> array.pt
+<Array [1.41, 2.83, 4.24, 5.66, 7.07] type='5 * float64'>
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\begin{onlyenv}<5>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([[{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                    {"px": 2, "py": 2, "pz": 2, "E": 2},
+...                    {"px": 3, "py": 3, "pz": 3, "E": 3}],
+...                   [],
+...                   [{"px": 4, "py": 4, "pz": 4, "E": 4},
+...                    {"px": 5, "py": 5, "pz": 5, "E": 5}]],
+...                  with_name="Lorentz")
+... 
+>>> array[0, -1]
+<LorentzRecord {px: 3, py: 3, pz: 3, E: 3} type='Lorentz["px": int64, "py": int6...'>
+>>> array * 10
+<Array [[{px: 10, py: 10, ... E: 50}]] type='3 * var * {"px": int64, "py": int64...'>
+>>> array.pt
+<Array [[1.41, 2.83, 4.24], ... [5.66, 7.07]] type='3 * var * float64'>
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\begin{onlyenv}<6>
+\begin{minted}{python}
+>>> import awkward1 as ak
+>>> import numpy as np
+>>> 
+>>> @ak.mixin_class(ak.behavior)
+... class Lorentz:
+...     @property
+...     def pt(self):
+...         return np.sqrt(self.px**2 + self.py**2)
+... 
+>>> array = ak.Array([[[{"px": 1, "py": 1, "pz": 1, "E": 1},
+...                     {"px": 2, "py": 2, "pz": 2, "E": 2}],
+...                    [{"px": 3, "py": 3, "pz": 3, "E": 3}]],
+...                   [[]],
+...                   [[{"px": 4, "py": 4, "pz": 4, "E": 4}],
+...                    [],
+...                    [{"px": 5, "py": 5, "pz": 5, "E": 5}]]],
+...                  with_name="Lorentz")
+>>> array[-1, 2, 0]
+<LorentzRecord {px: 5, py: 5, pz: 5, E: 5} type='Lorentz["px": int64, "py": int6...'>
+>>> array * 10
+<Array [[[{px: 10, py: 10, ... E: 50}]]] type='3 * var * var * {"px": int64, "py...'>
+>>> array.pt
+<Array [[[1.41, 2.83], [4.24, ... [], [7.07]]] type='3 * var * var * float64'>
+\end{minted}
+\vspace{3 cm}
+\end{onlyenv}
+\end{frame}
+
+\begin{frame}{Awkward Array has NumPy-like performance}
+\vspace{0.2 cm}
+\begin{columns}
+\column{1.1\linewidth}
+\includegraphics[width=\linewidth]{pivarski-one-slide-summary.pdf}
+\end{columns}
+\end{frame}
+
+
+
+
+
+
 \end{document}
